@@ -3,7 +3,7 @@
   <script src="//d3js.org/d3.v4.min.js"></script>
   <script src="dimple.min.js"></script>
   <script type="text/javascript">
-    var svg = dimple.newSvg("#chartContainer", 590, 400);
+    var svg = dimple.newSvg("#chartContainer", 1024, 800);
     d3.csv("trump_ratings.csv", function (data) {
       var myChart = new dimple.chart(svg, data);
       myChart.setBounds(60, 45, 510, 315)
