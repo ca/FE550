@@ -6,7 +6,7 @@
     var svg = dimple.newSvg("#chartContainer", 1024, 800);
     d3.csv("trump_ratings.csv", function (data) {
       var myChart = new dimple.chart(svg, data);
-      myChart.setBounds(60, 45, 510, 315)
+      myChart.setBounds(60, 45, 944, 715)
       myChart.addCategoryAxis("x", "Start");
       myChart.addMeasureAxis("y", "Approving");
       myChart.addSeries(["Approving", "Disapproving", "Unsure"], dimple.plot.bar);
