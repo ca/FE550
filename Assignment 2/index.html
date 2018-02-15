@@ -8,8 +8,10 @@
       var myChart = new dimple.chart(svg, data);
       myChart.setBounds(60, 45, 944, 715)
       myChart.addCategoryAxis("x", "Start");
-      myChart.addMeasureAxis("y", "Approving");
-      myChart.addSeries(["Approving", "Disapproving", "Unsure"], dimple.plot.bar);
+      myChart.addMeasureAxis("y", 100);
+      myChart.addSeries("Approving", dimple.plot.bar);
+      myChart.addSeries("Disapproving", dimple.plot.bar);
+      myChart.addSeries("Unsure", dimple.plot.bar);
       myChart.addLegend(200, 10, 380, 20, "right");
       myChart.draw();
     });
