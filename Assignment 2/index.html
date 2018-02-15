@@ -4,18 +4,13 @@
   <script src="dimple.min.js"></script>
   <script type="text/javascript">
     var svg = dimple.newSvg("#chartContainer", 590, 400);
-    d3.tsv("/data/example_data.tsv", function (data) {
-      data = dimple.filterData(data, "Owner", ["Aperture", "Black Mesa"])
+    d3.tsv("example_data.tsv", function (data) {
       var myChart = new dimple.chart(svg, data);
-      myChart.setBounds(60, 30, 350, 330)
-      var x = myChart.addCategoryAxis("x", ["Owner", "Month"]);
-      x.addGroupOrderRule("Date");
+      myChart.setBounds(60, 45, 510, 315)
+      myChart.addCategoryAxis("x", ["Price Tier", "Channel"]);
       myChart.addMeasureAxis("y", "Unit Sales");
-      var s = myChart.addSeries("SKU", dimple.plot.area);
-      s.interpolation = "step";
-      s.lineWeight = 1;
-      s.barGap = 0.05;
-      myChart.addLegend(430, 20, 100, 300, "left");
+      myChart.addSeries("Owner", dimple.plot.bar);
+      myChart.addLegend(200, 10, 380, 20, "right");
       myChart.draw();
     });
   </script>
