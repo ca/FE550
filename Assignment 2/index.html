@@ -6,12 +6,11 @@
     var svg = dimple.newSvg("#chartContainer", 590, 400);
     d3.csv("trump_ratings.csv", function (data) {
       var myChart = new dimple.chart(svg, data);
-      myChart.setBounds(65, 30, 505, 305)
+      myChart.setBounds(60, 30, 510, 305)
       var x = myChart.addCategoryAxis("x", "Start");
-      x.addOrderRule("Start");
-      myChart.addPctAxis("y", 100);
-      myChart.addSeries("Approving", dimple.plot.bar);
-      myChart.addLegend(60, 10, 510, 20, "right");
+      // x.addOrderRule("Date");
+      myChart.addMeasureAxis("y", ["Approving", "Disapproving"]);
+      myChart.addSeries(null, dimple.plot.bar);
       myChart.draw();
     });
   </script>
