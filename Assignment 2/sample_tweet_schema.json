@@ -1,0 +1,104 @@
+{
+	"created_at":"Wed Oct 18 02:21:16 +0000 2017",
+	"id":920474831749025800,
+	"id_str":"920474831749025795",
+	"text":"The most important truth our FOUNDERS understood was: FREEDOM is NOT a gift from Govt. FREEDOM is a GIFT from GOD.… https://t.co/cBgDuOtAXF",
+	"truncated":true,
+	"entities": {
+		"hashtags":[],
+		"symbols":[],
+		"user_mentions":[],
+		"urls":[
+			{"url":"https://t.co/cBgDuOtAXF","expanded_url":"https://twitter.com/i/web/status/920474831749025795","display_url":"twitter.com/i/web/status/9…","indices":[116,139]}
+		]
+	},
+	"source":"<a href=\"https://studio.twitter.com\" rel=\"nofollow\">Media Studio</a>",
+	"in_reply_to_status_id":null,
+	"in_reply_to_status_id_str":null,
+	"in_reply_to_user_id":null,
+	"in_reply_to_user_id_str":null,
+	"in_reply_to_screen_name":null,
+	"user":{
+		"id":25073877,
+		"id_str":"25073877",
+		"name":"Donald J. Trump",
+		"screen_name":"realDonaldTrump",
+		"location":"Washington, DC",
+		"description":"45th President of the United States of America🇺🇸",
+		"url":"https://t.co/OMxB0x7xC5",
+		"entities":{
+			"url":{
+				"urls":[
+					{"url":"https://t.co/OMxB0x7xC5","expanded_url":"http://www.Instagram.com/realDonaldTrump","display_url":"Instagram.com/realDonaldTrump","indices":[0,23]}
+				]
+			},
+			"description":{"urls":[]}
+		},
+		"protected":false,
+		"followers_count":47854367,
+		"friends_count":45,
+		"listed_count":84757,
+		"created_at":"Wed Mar 18 13:46:38 +0000 2009",
+		"favourites_count":24,
+		"utc_offset":-18000,
+		"time_zone":"Eastern Time (US & Canada)",
+		"geo_enabled":true,
+		"verified":true,
+		"statuses_count":36938,
+		"lang":"en",
+		"contributors_enabled":false,
+		"is_translator":false,
+		"is_translation_enabled":true,
+		"profile_background_color":"6D5C18",
+		"profile_background_image_url":"http://pbs.twimg.com/profile_background_images/530021613/trump_scotland__43_of_70_cc.jpg",
+		"profile_background_image_url_https":"https://pbs.twimg.com/profile_background_images/530021613/trump_scotland__43_of_70_cc.jpg",
+		"profile_background_tile":true,
+		"profile_image_url":"http://pbs.twimg.com/profile_images/874276197357596672/kUuht00m_normal.jpg",
+		"profile_image_url_https":"https://pbs.twimg.com/profile_images/874276197357596672/kUuht00m_normal.jpg",
+		"profile_banner_url":"https://pbs.twimg.com/profile_banners/25073877/1517463920",
+		"profile_link_color":"1B95E0",
+		"profile_sidebar_border_color":"BDDCAD",
+		"profile_sidebar_fill_color":"C5CEC0",
+		"profile_text_color":"333333",
+		"profile_use_background_image":true,
+		"has_extended_profile":false,
+		"default_profile":false,
+		"default_profile_image":false,
+		"following":true,
+		"follow_request_sent":false,
+		"notifications":false,
+		"translator_type":"regular"
+	},
+	"geo":null,
+	"coordinates":null,
+	"place":null,
+	"contributors":null,
+	"is_quote_status":false,
+	"retweet_count":17746,
+	"favorite_count":63234,
+	"favorited":false,
+	"retweeted":false,
+	"possibly_sensitive":false,
+	"lang":"en",
+	"sentiment":{
+		"score":10,
+		"comparative":0.45454545454545453,
+		"tokens":["the","most","important","truth","our","founders","understood","was","freedom","is","not","a","gift","from","govt","freedom","is","a","gift","from","god…","httpstcocbgduotaxf"],
+		"words":["gift","freedom","gift","freedom","important"],
+		"positive":["gift","freedom","gift","freedom","important"],
+		"negative":[]
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

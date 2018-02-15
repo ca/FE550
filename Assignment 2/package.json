@@ -1,0 +1,17 @@
+{
+  "name": "assignment2",
+  "version": "1.0.0",
+  "description": "Sentiment Analysis of Presidents Tweets vs Approval Rating",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander Vallorosi",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^5.0.0",
+    "jsonfile": "^4.0.0",
+    "sentiment": "^4.2.0",
+    "twitter": "^1.7.1"
+  }
+}
