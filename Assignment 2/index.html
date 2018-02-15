@@ -9,7 +9,7 @@
       myChart.setBounds(60, 30, 510, 305)
       var x = myChart.addCategoryAxis("x", "Start");
       // x.addOrderRule("Date");
-      myChart.addMeasureAxis("y", ["Approving", "Disapproving"]);
+      myChart.addMeasureAxis("y", "Approving");
       myChart.addSeries(null, dimple.plot.bar);
       myChart.draw();
     });
