@@ -1,17 +1,77 @@
 <html>
 <div id="chartContainer">
+  <h1>Bubble Chart of President Donald Trumps Approval Rating per Rating Period with Number of Tweets per Rating Period (bubble)</h1>
+  <p>The concept for this project was initially more ambition but proved too difficult given the time constraint. My idea was to plot the overall sentiment of Presidential tweets on the @realdonaldtrump account during a polling period, against the measured approval and disapproval rating per polling period, to determine if a particular sentiment made any impact on the president's approval rating.</p>
+  <br>
+  <p>Instead, I gathered data and charted the number of tweets (in the bubble of the chart) and the approval rating, per each period. This gives some insight into whether more or less tweets will improve the approval rating or not.</p>
+  <br>
+  <p>For example, if a bubble is relatively large and there is also a higher approval rating in the following term, then this means that a larger number of tweets may have led to a higher approval rating.</p>
+  <br><br>
+  <p>For those who wish to dig further into this topic, I used Node.js to fully analyze the sentiment of over 3,000 of Donald Trump's tweets @realdonaldtrump, and I have made the data available <a href="">at this link</a></p>
   <script src="//d3js.org/d3.v4.min.js"></script>
   <script src="dimple.min.js"></script>
   <script type="text/javascript">
-    var svg = dimple.newSvg("#chartContainer", 590, 400);
+
+    function loadJSON(callback) {   
+      console.log("TESTING")
+      var xobj = new XMLHttpRequest();
+          xobj.overrideMimeType("application/json");
+      xobj.open('GET', 'realdonaldtrump_tweets.json', true); // Replace 'my_data' with the path to your file
+      xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == "200") {
+              // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+              // console.log(xobj.responseText)
+              callback(xobj.responseText);
+            }
+      };
+      xobj.send(null);
+    }
+
+    function csvJSON(csv){
+      var lines=csv.split("\n");
+      var result = [];
+      var headers=lines[0].split(",");
+      for(var i=1;i<lines.length;i++){
+        var obj = {};
+        var currentline=lines[i].split(",");
+        for(var j=0;j<headers.length;j++){
+          obj[headers[j]] = currentline[j];
+        }
+        result.push(obj);
+
+      }
+      return result; //JavaScript object
+      // return JSON.stringify(result); //JSON
+    }
+
+    function build (tweets) {
+      console.log("CALLBACK REACHED");
+      let polls = csvJSON("trump_ratings.csv")
+
+      console.log(polls)
+      for (var i=0; i<polls.length; i++){
+        let thisPoll = polls[i];
+        for (var j=0; j<tweets.length; j++){
+          let tweet = tweets[j];
+          if (new Date(thisPoll.start) >= new Date(tweet.createdAt)
+              && new Date(thisPoll.end) <= new Date(tweet.createdAt)) { console.log(thisPoll.tweetsBetween); thisPoll.tweetsBetween += 1 }
+          if (new Date(thisPoll.end) < new Date(tweet.createdAt)) return;
+        }
+      }
+    }
+
+    loadJSON(build)
+
+    var svg = dimple.newSvg("#chartContainer", 1180, 800);
     d3.csv("trump_ratings.csv", function (data) {
       var myChart = new dimple.chart(svg, data);
-      myChart.setBounds(65, 30, 505, 305)
+      myChart.setBounds(90, 50, 1000, 700)
       var x = myChart.addCategoryAxis("x", "Start");
-      // x.addOrderRule("Date");
-      myChart.addPctAxis("y", "Disapproving");
-      myChart.addSeries(null, dimple.plot.bar);
-      myChart.addLegend(60, 10, 510, 20, "right");
+      x.addOrderRule("Start");
+      myChart.addMeasureAxis("y", "Approving");
+      myChart.addMeasureAxis("z", "Tweets");
+      myChart.addSeries(null, dimple.plot.bubble);
+      myChart.addLegend(140, 10, 360, 20, "right");
       myChart.draw();
     });
   </script>
